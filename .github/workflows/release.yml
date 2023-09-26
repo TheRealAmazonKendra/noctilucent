@@ -70,4 +70,3 @@ jobs:
         run: |-
           npm set "//registry.npmjs.org/:_authToken" ${{ secrets.NPM_TOKEN }}
           wasm-pack publish --tag latest
-
