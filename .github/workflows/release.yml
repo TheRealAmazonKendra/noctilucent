@@ -33,7 +33,7 @@ jobs:
 
             [Workflow Run]: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           pr-release-notes: true
-          pr-prefix: github-actions/release
+          branch-prefix: github-actions/release
           check-semver: true
           git-user-name: github-actions
           git-user-email: github-actions@github.com
