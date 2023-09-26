@@ -20,7 +20,7 @@ jobs:
       - name: Install cargo-release
         uses: taiki-e/install-action@main
         with:
-          tool: cargo-release, cargo-binstall
+          tool: cargo-binstall
       - uses: cargo-bins/release-pr@main
         with:
           github-token: ${{ secrets.PROJEN_GITHUB_TOKEN }}
