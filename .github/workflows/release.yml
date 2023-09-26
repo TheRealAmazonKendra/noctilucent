@@ -15,8 +15,8 @@ jobs:
         uses: actions/checkout@main
       - name: Set git identity
         run: |-
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
+          git config user.name "cdklabs-automation"
+          git config user.email "aws-cdk-dev+cdklabs@amazon.com"
       - name: Install cargo-release
         uses: taiki-e/install-action@main
         with:
@@ -35,8 +35,8 @@ jobs:
           pr-release-notes: true
           branch-prefix: github-actions/release
           check-semver: true
-          git-user-name: github-actions
-          git-user-email: github-actions@github.com
+          git-user-name: cdklabs-automation
+          git-user-email: aws-cdk-dev+cdklabs@amazon.com
     env:
       CARGO_REGISTRY_TOKEN: ${{ secrets.CRATES_TOKEN }}
 
