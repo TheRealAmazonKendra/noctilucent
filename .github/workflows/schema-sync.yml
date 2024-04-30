@@ -9,8 +9,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@main
-        with:
-          token: ${{ secrets.PROJEN_GITHUB_TOKEN }}
       - name: Set git identity
         run: |-
           git config user.name "github-actions"
