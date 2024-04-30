@@ -26,3 +26,19 @@ jobs:
           output-path: '/home/runner/work/cdk-from-cfn/cdk-from-cfn/src/specification'
       - name: Show Diff
         run: 'git diff'
+      - name: Open Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          author: github-actions <github-actions@github.com>
+          committer: github-actions <github-actions@github.com>
+          signoff: true
+          branch: github-actions/update-schema
+          body: |
+            Updates CloudFormation Specification. See details in [workflow run].
+            [Workflow Run]: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          commit-message: |-
+            chore: upgrade cloudformation specification
+            Updates CloudFormation Specification. See details in [workflow run].
+            [Workflow Run]: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          title: 'chore: update cloudformation specification'
+          labels: auto-approve
