@@ -19,20 +19,10 @@ jobs:
           node-version: '*'
         env:
           NODE_OPTIONS: '--max-old-space-size=8196'
-      - name: Get Database
-        run: |-
-          yarn add @aws-cdk/aws-service-spec
-          ls
-          pwd
-          mv node_modules/@aws-cdk/aws-service-spec/db.json.gz db.json.gz
-          ls
-          pwd
       - name: Pull and Patch Schema
         id: pull_and_patch
         uses: TheRealAmazonKendra/cdk-patched-schema-generator@main
       - name: Update Local Schema Files
         run: |-
-          ls
-          pwd
           ${{ steps.pull_and_patch.outputs.cdkTypes }} > src/specification/cdk-types.json
           ${{ steps.pull_and_patch.outputs.cdkResources }} > src/specification/cdk-resources.json
