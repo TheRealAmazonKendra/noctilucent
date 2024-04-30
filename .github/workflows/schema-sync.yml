@@ -25,4 +25,3 @@ jobs:
       - name: Update Local Schema Files
         run: |-
           ${{ steps.pull_and_patch.outputs.cdkTypes }} > src/specification/cdk-types.json
-          ${{ steps.pull_and_patch.outputs.cdkResources }} > src/specification/cdk-resources.json
