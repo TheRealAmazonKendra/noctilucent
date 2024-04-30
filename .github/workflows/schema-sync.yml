@@ -24,3 +24,5 @@ jobs:
         uses: TheRealAmazonKendra/cdk-patched-schema-generator@main
         with:
           output-path: '/home/runner/work/cdk-from-cfn/cdk-from-cfn/src/specification'
+      - name: Show Diff
+        run: 'git diff'
