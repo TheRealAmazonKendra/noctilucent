@@ -17,6 +17,8 @@ jobs:
         uses: actions/setup-node@main
         with:
           node-version: '*'
+        env:
+          NODE_OPTIONS: '--max-old-space-size=8196'
       - name: Get Database
         run: |-
           yarn add @aws-cdk/aws-service-spec
