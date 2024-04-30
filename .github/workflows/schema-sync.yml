@@ -22,6 +22,5 @@ jobs:
       - name: Pull and Patch Schema
         id: pull_and_patch
         uses: TheRealAmazonKendra/cdk-patched-schema-generator@main
-      - name: Update Local Schema Files
-        run: |-
-          ${{ steps.pull_and_patch.outputs.cdkTypes }} > src/specification/cdk-types.json
+        with:
+          output-path: '/home/runner/work/cdk-from-cfn/cdk-from-cfn/src/specification'
