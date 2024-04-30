@@ -13,6 +13,18 @@ jobs:
         run: |-
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
+      - name: Setup Node
+        uses: actions/setup-node@main
+        with:
+          node-version: '*'
+      - name: Get Database
+        run: |-
+          yarn install @aws-cdk/aws-service-spec
+          ls
+          pwd
+          mv node_modules/@aws-cdk/aws-service-spec/db.json.gz db.json.gz
+          ls
+          pwd
       - name: Pull and Patch Schema
         id: pull_and_patch
         uses: TheRealAmazonKendra/cdk-patched-schema-generator@main
